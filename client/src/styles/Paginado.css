@@ -1,0 +1,35 @@
+/* .paginado{
+    
+} */
+
+.number{
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    cursor: pointer;
+    backdrop-filter: blur(1rem);
+    overflow: hidden;
+    width: 2.5rem;
+    backdrop-filter: blur(1rem);
+    background-color: transparent;
+    border: .1rem solid #1ca381;
+    color: white;
+    margin: .5rem;
+}
+.number:hover{
+    background-color: #1ca381;
+}
+.flechas{
+    width: 50px;
+    height: 30px;
+    background-color: transparent;
+    border: .1rem solid #1ca381;
+    backdrop-filter: blur(1rem);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.flechas:hover{
+
+    color: black;
+    background-color: #1ca381;
+}

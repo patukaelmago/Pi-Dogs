@@ -1,0 +1,50 @@
+.detail-container{
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.detail-card{
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    overflow: hidden;
+    width: 30rem;
+    backdrop-filter: blur(1rem);
+    height: 50rem;
+    background-color: rgba(255, 255, 255, 0.060);
+    border: .1rem solid #1ca381;
+    color: black;
+}
+
+.background-top-row{
+    background-color: #1ca381;
+    color: black;
+}
+h2{
+    backdrop-filter: blur(1rem);
+}
+
+
+.back{
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    cursor: pointer;
+    backdrop-filter: blur(1rem);
+    overflow: hidden;
+    width: 200px;
+    backdrop-filter: blur(1rem);
+    background-color: transparent;
+    border: .1rem solid #1ca381;
+    color: black;
+    margin: .5rem;
+}
+
+.temp{
+    cursor: pointer;
+}
