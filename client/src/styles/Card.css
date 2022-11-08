@@ -1,17 +1,18 @@
 .card-container{
     
-    height: 300px;
+    height: 370px;
     width: 300px;
     padding-right: 30px;
+    padding-bottom: 30px;
     display:inline-block;
 }
 
 .card{
     border-radius: 1rem;
-     box-shadow: 5px 8px 12px black;;
+    box-shadow: 5px 8px 12px black;;
     margin: 1rem;
     overflow: hidden;
-    width: 100%;
+    width: 268px;
     height: 100%;
     backdrop-filter: blur(1rem);
     background-color: rgba(255, 255, 255, 0.060);
@@ -25,20 +26,33 @@
 .background-top-row{
     background-color: rgb(76, 209, 165);
     color: black;
+    
+    
+   
 }
-.img-dog{ 
-    height: 10px;
-    width: 10px;
-    margin-bottom: 30px;
-    object-fit:fill;
+.image-container{ 
+        border-radius: 8px 8px 0 0 ;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
 }
+
 .temps {
     color:rgb(0, 0, 0);
     /* backdrop-filter: blur(1rem); */
     /* background-color: #1ca381; */
     padding-top: 15px;
     padding-bottom: 20px;
+    
 }
 .weight{
-    padding: 10px;
+    transform: translate(45%, -520%);
+    position: absolute;
+    margin-bottom: 5px;
+    
 }
+.imagenenen{
+    width: 180px;
+    height: 130px;
+}
+

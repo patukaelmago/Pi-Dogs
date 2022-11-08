@@ -26,7 +26,7 @@ export default function Home() {
     const [dogsPerPage, setDogsPerPage] = useState(8); 
     const indexOfLastDog = currentPage * dogsPerPage;
     const indexOfFirstDog = indexOfLastDog - dogsPerPage; 
-    const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog); 
+    const currentDogs = allDogs?.slice(indexOfFirstDog, indexOfLastDog); 
     const [_orden, setOrden] = useState(''); 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -156,7 +156,8 @@ export default function Home() {
                     )
                 })}
             </div>
-            <div>
+            {/* <div className="paginado"></div> */}
+            <div >
             {<Paginado 
             dogsPerPage={dogsPerPage}
             allDogs={allDogs.length}

@@ -8,6 +8,7 @@
 .home{
     background-color: rgb(132, 134, 136);
     
+    
 }
 .cardsContainer{
     display: flex;
@@ -44,7 +45,7 @@ ul{
     cursor: pointer;
     backdrop-filter: blur(1rem);
     overflow: hidden;
-    width: 220px;
+    width: 200px;
     height: 30px;
     backdrop-filter: blur(1rem);
     background-color: transparent;
@@ -52,9 +53,10 @@ ul{
     color: black;
     margin: .5rem;
     letter-spacing: 2px;
-    margin-left: 20px;
+    margin-left: 15px;
     text-align: center;
     font-size: 15px;
+    margin-top: 17px;
 }
 
 .elementNB:hover{
@@ -110,9 +112,9 @@ ul{
     transform: translate(-23%, 186%);
  }
 .header {
-    margin-left: 135px;
+    margin-left: 130px;
     /* margin-top: 200 auto; */
-    width:1170px;
+    width:1160px;
     height:310px;
     overflow: hidden;
     position: relative;
@@ -143,4 +145,7 @@ ul{
 
 .papeiners{
     margin-bottom: 20px;
+}
+.paginado{
+    margin-top: 200 px;
 }

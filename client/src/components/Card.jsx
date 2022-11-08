@@ -5,7 +5,6 @@ import '../styles/Card.css';
 export default function Card ({image, name, temperaments, weightMin, weightMax, id}){
   
     return (
-      <div className='size'>
       
        <div className='card-container'>
        <Link to={`/detail/${id}`}>
@@ -18,11 +17,9 @@ export default function Card ({image, name, temperaments, weightMin, weightMax, 
             t.name + ', '
             )):temperaments?.join(', ')}
             </div >
-            <div  className='image-container' /* object-fit='contain' */>
-            <img src={image} alt={`${name}`} width='100px' heigth='80px'object-fit='contain' className='image-dog'/>
-
+            <div className="image-container">
+                <img className="imagenenen" src={image} alt={`${name}`} height= '250px' width='200px'/>
             </div>
-             
             <div className='weight'>
             <h4 className='info'>Min Weight: {weightMin} kg</h4>
             <h4 className='info'>Max Weight: {weightMax} kg</h4>
@@ -31,6 +28,6 @@ export default function Card ({image, name, temperaments, weightMin, weightMax, 
         </Link>
        </div>
      
-      </div>
+      
     )
 }
