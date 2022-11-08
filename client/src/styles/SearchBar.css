@@ -1,6 +1,6 @@
 .group{
-    margin-left: 300px;
-    margin-top: 30px;
+    margin-left: 138px;
+    margin-top: 10px;
     margin-bottom: 30px;
     border-radius: 300px;
     height: 30px;
@@ -11,43 +11,45 @@
 
 .input{
     height: 30px;
-    width: 800px;
+    width: 400px;
     backdrop-filter: blur(1rem);
-    color: white;
+    color: rgb(0, 0, 0);
     letter-spacing: 2px;
     padding-left: 10px;
-    border: solid  #1ca381 1px;
+    border: solid  rgb(76, 209, 165)1px;
     border-radius: 50px;
-    margin-right: 20px;
-    background-color:  transparent;
+    background-color:  rgb(76, 209, 165);
+    box-shadow: 5px 8px 12px black;
+    font-size: 16px;
 }
 ::placeholder { 
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     opacity: 1;
+    font-size: 16px;
     
 }
 
-/* .button-search{
-
-} */
-
 .searcho{
     background-color: transparent;
-    color: white;
-    height: 30px;
-    width: 200px;
+    border-top-color: black 1px;
+    color: rgb(76, 209, 165);
+    
+    height: 10px;
+    width: 150px;
     cursor: pointer;
-    border-radius: 20px;
-    border: solid 1px rgb(76, 209, 165);
-    backdrop-filter: blur(1rem);
-    letter-spacing: 2px;
+    font-size: 40px;
+    transform: translate(-20%, -60%);
+    
+    
 }
 
 
 .searcho:hover{
-    color: black;
-    background-color: rgb(76, 209, 165);
-
+    color: rgb(255, 255, 255);
+    
+}
+.pad{
+    padding-right: 80px;
 }
 
 

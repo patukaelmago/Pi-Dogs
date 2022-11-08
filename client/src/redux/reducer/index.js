@@ -54,8 +54,15 @@ console.log(dogFilter,action.payload)
                 const dogApi = dogFilter.filter(dog => dog.createdInDb === false )
                  dogFound = dogApi; 
             } else {
-                const dogDb = dogFilter.filter(dog => dog.createdInDb === true )
+                try {
+                    const dogDb = dogFilter.filter(dog => dog.createdInDb === true )
                 dogFound = dogDb;
+                    
+                } catch (error) {
+                    console.log("Dogs not found in Db")
+                    
+                }
+                
             }
             return{
                 ...state,

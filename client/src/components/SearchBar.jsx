@@ -2,16 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { getDogs } from '../redux/actions';
 import '../styles/SearchBar.css';
+import { FaSearch } from 'react-icons/fa';
 
 function SearchBar({setCurrentPage}) {
     const dispatch = useDispatch()
     const [name, setName] = useState("");
-    /* const [currentPage, setCurrentPage] = useState(1); */
-    
-
-    /* useEffect(() => {
-        dispatch(getDogs());
-    }, [dispatch]); */
 
     function handleInputChange(e){
         e.preventDefault()
@@ -24,14 +19,15 @@ function SearchBar({setCurrentPage}) {
      }
     return (
         <div className='group'> 
+       
             <input
                 className='input'
                 type='search'
-                placeholder='   Search Dog ...'
+                placeholder=' Search Dog ...'
                 onChange={ handleInputChange }
                 value={name}
-            />
-            <button className='searcho' type='search' onClick={handleSubmit}><strong>Search</strong></button>
+            /> <button className='searcho' type='search' onClick={handleSubmit}><FaSearch/></button>
+            
         </div>
     )
 }

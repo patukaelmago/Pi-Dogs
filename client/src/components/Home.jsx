@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/Home.css';
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import dog from "../images/dog.jpg";
 import { 
     getDogs, 
     getTemperaments, 
@@ -17,31 +18,25 @@ import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
 import Loading from "./Loading";
 
-
 export default function Home() {
     const dispatch = useDispatch();
     const allDogs = useSelector((state) => state.dogs);
     const allTemperaments = useSelector((state) => state.temperaments);
-
-     // Paginado:
-    const [currentPage, setCurrentPage] = useState(1); // En una constante me guardo el estado local actual y la otra me setea el estado actual. El state inicial es 1 porque empiezo en la primer página.
-    const [dogsPerPage, /*setDogsPerPage*/] = useState(8); // Me guardo cuantos perros quiero por página.
-    const indexOfLastDog = currentPage * dogsPerPage; // El índice del último perro de cada página va a ser el numero de la página multiplicado por la cantidad de perros por página.
-    const indexOfFirstDog = indexOfLastDog - dogsPerPage; // El índice del primer perro de cada página va a ser el índice del último de esa página menos la cantidad de perros por página.
-    const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog); // Los perros mostrados en cada página serán los que estén en la porción que va desde el primero hasta el último de cada página, de la lista total de perros.
-
-    const [/*_orden*/, setOrden] = useState(''); // Estado local que me sirve para modificar el estado cuando ordeno y renderizar los perros ordenados como quiero.
-
+    const [currentPage, setCurrentPage] = useState(1); 
+    const [dogsPerPage, setDogsPerPage] = useState(8); 
+    const indexOfLastDog = currentPage * dogsPerPage;
+    const indexOfFirstDog = indexOfLastDog - dogsPerPage; 
+    const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog); 
+    const [_orden, setOrden] = useState(''); 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
-     
+
     useEffect(() => { 
         dispatch(getDogs())
         dispatch(getTemperaments())
         dispatch(clearDetail())
     }, [dispatch])
-
 
     function handleClick(e) {
         e.preventDefault();
@@ -59,7 +54,6 @@ export default function Home() {
         e.preventDefault();
         dispatch(filterCreated(e.target.value))
         setCurrentPage(1);
-        
     }
 
     function handleSortByName(e) {
@@ -78,20 +72,40 @@ export default function Home() {
     return (
         <div>
             {currentDogs.length > 0 ?
-
+           
         <div className="home">
-            
+            <div className="papeiners">
+                <hr></hr>
+            </div>   
+          <div className="header">
+            <img src={dog} alt="img not found" />
+            <p><strong>Dogs</strong></p>
+            <h3>Unconditional Love</h3>
+            <div className="padr">
+                    
+                    <Link to='/dogs'>
+                        <button className='elementNA'> 
+                            <strong>Create Dog</strong>
+                        </button>
+                    </Link>
+                    </div>
+                    <div className="padl">
+
+                    <button className='elementNA' onClick={e => { handleClick(e) }} >
+                        <strong>Refresh</strong>
+                    </button>
+                    </div>
+                    <div className="container">
+                    <div className="pad">
+                        <SearchBar 
+                        setCurrentPage={setCurrentPage} />
+                    </div>
+                    
+                </div>
+          </div>
             <div className="divNB">
                 <ul className="navbar">
-                    <li className="content-select">
-                        <select defaultValue="selected" className='elementNB' onChange={(e) => handleFilterCreated(e)}>
-                            <option value="selected" disabled selected > 
-                                Filter by Origin
-                            </option>
-                            <option value="api">API</option>
-                            <option value="db">DB</option>
-                        </select>
-                    </li>
+                    
                     <li className="content-select">
                         <select  className='elementNB' onChange={e => handleSortByName(e)} >
                             <option value='selected' disabled selected>Sort by name</option>
@@ -107,6 +121,13 @@ export default function Home() {
                         </select>
                     </li>
                     <li className="content-select">
+                        <select className='elementNB' onChange={(e) => handleFilterCreated(e)}>
+                            <option value="option" disabled selected > Filter by Origin</option>
+                            <option value="api">API</option>
+                            <option value="db">DB</option>
+                        </select>
+                    </li>
+                    <li className="content-select">
                         <select className='elementNB' defaultValue='selected' name='temperaments' onChange={e => handleFilterTemperaments(e)} >
                             <option value='selected'  disabled selected>Filter by Temperaments</option>
                             <option value='all'>All</option>
@@ -114,32 +135,10 @@ export default function Home() {
                                 <option key={t.id} value={t.name}>{t.name}</option>
                             ))}
                         </select>
-                    </li>
-                    
+                    </li> 
                 </ul>
-                <div className="search-bar">
-                    <Link to='/dogs'>
-                        <button className='elementNB'> 
-                            <strong>Create Dog</strong>
-                        </button>
-                    </Link>
-                    <button className='elementNB' onClick={e => { handleClick(e) }} >
-                        <strong>Refresh</strong>
-                    </button>
-                </div>
                
-                    <SearchBar 
-                    setCurrentPage={setCurrentPage} />
-              
             </div>
-            <div>
-            {<Paginado 
-            dogsPerPage={dogsPerPage}
-            allDogs={allDogs.length}
-            paginado = {paginado}
-            currentPage={currentPage}/>}
-            </div>
-           
             <div className='cardsContainer'>
                 {currentDogs?.map(d => {
                     return (
@@ -157,6 +156,17 @@ export default function Home() {
                     )
                 })}
             </div>
+            <div>
+            {<Paginado 
+            dogsPerPage={dogsPerPage}
+            allDogs={allDogs.length}
+            paginado = {paginado}
+            currentPage={currentPage}/>}
+            </div>
+            <div>
+
+            </div>
+          
         </div>
         : <Loading/> } </div>
     )

@@ -3,7 +3,6 @@ import styles from '../styles/Paginado.css'
 
 export default function Paginado({dogsPerPage, currentPage, allDogs, paginado}){
     const pageNumbers = []
-
     for (let i = 1; i <= Math.ceil(allDogs/dogsPerPage); i++) {
         pageNumbers.push(i)
     }
@@ -19,8 +18,6 @@ export default function Paginado({dogsPerPage, currentPage, allDogs, paginado}){
               currentPage < pageNumbers.length ? <button className='flechas' onClick={()=>paginado(currentPage + 1)}> ❯ </button>:
               <button className='flechas' disabled> ❯ </button>
             }
-            
-           
           </div>
             <div className='paginado'>
         {
@@ -35,4 +32,3 @@ export default function Paginado({dogsPerPage, currentPage, allDogs, paginado}){
       )
     }
         
-
