@@ -18,7 +18,7 @@ function SearchBar({setCurrentPage}) {
         setCurrentPage(1);
      }
     return (
-        <div className='group'> 
+        <> 
        
             <input
                 className='input'
@@ -28,7 +28,7 @@ function SearchBar({setCurrentPage}) {
                 value={name}
             /> <button className='searcho' type='search' onClick={handleSubmit}><FaSearch/></button>
             
-        </div>
+        </>
     )
 }
 

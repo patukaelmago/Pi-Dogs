@@ -98,8 +98,6 @@ export default function Form(){
 
     return (
         <div className="form-container">
-            
-       
           <div className="created-card">
             <h1>Create Dog</h1>
             <form onSubmit={handleSubmit}>
@@ -229,9 +227,8 @@ export default function Form(){
             </form>
           </div>
           <div className="back-container">
-                <Link to= '/home'><button className="button-back">Back </button></Link>
+                <Link to= '/home'><button className="back">Back </button></Link>
           </div>
         </div>
   )
-
 }

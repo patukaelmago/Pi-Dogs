@@ -27,14 +27,15 @@ export default function Home() {
     const indexOfLastDog = currentPage * dogsPerPage;
     const indexOfFirstDog = indexOfLastDog - dogsPerPage; 
     const currentDogs = allDogs?.slice(indexOfFirstDog, indexOfLastDog); 
-    const [_orden, setOrden] = useState(''); 
+    const [_orden, setOrden] = useState('');
+    const [clean, setClean] = useState({temperaments:"",created:"",weight:"", name:""}); 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
 
     useEffect(() => { 
-        dispatch(getDogs())
-        dispatch(getTemperaments())
+       if(!allDogs.length > 0) {dispatch(getDogs())
+        dispatch(getTemperaments())}
         dispatch(clearDetail())
     }, [dispatch])
 
@@ -47,24 +48,42 @@ export default function Home() {
     function handleFilterTemperaments(e) {
         e.preventDefault(e);
         dispatch(filterDogsByTemperament(e.target.value))
+        setClean({
+            ...clean, temperaments:e.target.value
+        }); 
+        e.target.value = "Filter Temperaments"
         setCurrentPage(1);
         setOrden(e.target.value);
+        
     }
     function handleFilterCreated(e) {
         e.preventDefault();
         dispatch(filterCreated(e.target.value))
+        setClean({
+            ...clean, created:e.target.value
+        }); 
+        e.target.value = "Filter by Origin"
         setCurrentPage(1);
+        setOrden(e.target.value);
     }
 
     function handleSortByName(e) {
         e.preventDefault();
         dispatch(sortByName(e.target.value));
+        setClean({
+            ...clean, name:e.target.value
+        }); 
+        e.target.value = "Sort by name"
         setCurrentPage(1);
         setOrden(e.target.value);
     }
     function handleSortByWeight(e) {
         e.preventDefault();
         dispatch(sortByWeight(e.target.value));
+        setClean({
+            ...clean, weight:e.target.value
+        }); 
+        e.target.value="Sort by weight"
         setCurrentPage(1);
         setOrden(`Ordenado ${e.target.value}`);
     }
@@ -72,75 +91,71 @@ export default function Home() {
     return (
         <div>
             {currentDogs.length > 0 ?
-           
-        <div className="home">
-            <div className="papeiners">
-                <hr></hr>
-            </div>   
-          <div className="header">
-            <img src={dog} alt="img not found" />
-            <p><strong>Dogs</strong></p>
-            <h3>Unconditional Love</h3>
-            <div className="padr">
-                    
-                    <Link to='/dogs'>
-                        <button className='elementNA'> 
-                            <strong>Create Dog</strong>
-                        </button>
-                    </Link>
+            <div className="home">
+                <div className="papeiners">
+                    <hr></hr>
+                </div>   
+                <div className="header">
+                    <img src={dog} alt="img not found" />
+                    <p><strong>Dogs</strong></p>
+                    <h3>Unconditional Love</h3>
+                    <div className="padr">
+                        <Link to='/dogs'>
+                            <button className='elementNA'> 
+                                Create Dog
+                            </button>
+                        </Link>
                     </div>
                     <div className="padl">
-
-                    <button className='elementNA' onClick={e => { handleClick(e) }} >
-                        <strong>Refresh</strong>
-                    </button>
+                        <button className='elementNA' onClick={e => { handleClick(e) }} >
+                           All Dogs
+                        </button>
                     </div>
                     <div className="container">
-                    <div className="pad">
-                        <SearchBar 
-                        setCurrentPage={setCurrentPage} />
+                        <div className="pad">
+                            <SearchBar 
+                            setCurrentPage={setCurrentPage} />
+                        </div>
                     </div>
-                    
-                </div>
-          </div>
-            <div className="divNB">
-                <ul className="navbar">
-                    
-                    <li className="content-select">
-                        <select  className='elementNB' onChange={e => handleSortByName(e)} >
-                            <option value='selected' disabled selected>Sort by name</option>
-                            <option value='asc'>A - Z</option>
-                            <option value='desc'>Z - A</option>
+                    <div className="padw">
+                        <select  className='elementNC'defaultValue='selected' onChange={e => handleSortByName(e)} >
+                            <option hidden value="Sort by name">{clean.name || "Sort by name"}</option>
+                            <option value='selected' disabled selected>Breed</option>
+                            <option value='Ascendent'>A - Z</option>
+                            <option value='Descendent'>Z - A</option>
                         </select>
-                    </li>
-                    <li className="content-select">
-                        <select className="elementNB" onChange={e => handleSortByWeight(e)}  >
-                            <option value='selected'  disabled selected>Sort by weight</option>
-                            <option value='asc'>Lighter to heavier</option>
-                            <option value='desc'>Heavier to lighter</option>
+                    </div>
+                    <div className="padq">
+                        <select className="elementNC" defaultValue='selected' onChange={e => handleSortByWeight(e)}  >
+                            <option hidden value="Sort by weight">{clean.weight || "Sort by weight"}</option>
+                            <option value='selected' disabled selected>Weight</option>
+                            <option value='Lighter to heavier'>Lighter to heavier</option>
+                            <option value='Heavier to lighter'>Heavier to lighter</option>
                         </select>
-                    </li>
-                    <li className="content-select">
-                        <select className='elementNB' onChange={(e) => handleFilterCreated(e)}>
-                            <option value="option" disabled selected > Filter by Origin</option>
-                            <option value="api">API</option>
-                            <option value="db">DB</option>
+                    </div>
+                    <div className="pade">
+                        <select className='elementNC' defaultValue='selected' onChange={e => handleFilterCreated(e)}>
+                            <option hidden value="Filter by Origin">{clean.created || "Filter by Origin"}</option>
+                            <option value="selected" disabled selected >Origin</option>
+                            <option value="Api Dogs">API</option>
+                            <option value="In Database">DB</option>
                         </select>
-                    </li>
-                    <li className="content-select">
-                        <select className='elementNB' defaultValue='selected' name='temperaments' onChange={e => handleFilterTemperaments(e)} >
-                            <option value='selected'  disabled selected>Filter by Temperaments</option>
+                    </div>
+                    <div className="padf">
+                        <select className='elementNC' defaultValue='selected' name='temperaments' onChange={e => handleFilterTemperaments(e)} >
+                            <option hidden value="Filter Temperaments">
+                                {clean.temperaments || "Filter Temperaments"}
+                            </option>
+                            <option value='selected' disabled selected>Temperaments</option>
                             <option value='all'>All</option>
                             {allTemperaments.map(t => (
-                                <option key={t.id} value={t.name}>{t.name}</option>
+                            <option key={t.id} value={t.name}>{t.name}</option>
                             ))}
                         </select>
-                    </li> 
-                </ul>
-               
-            </div>
-            <div className='cardsContainer'>
-                {currentDogs?.map(d => {
+                    </div>
+                </div>
+                <div className='cardsContainer'>
+                    {currentDogs?.map(d => {
                     return (
                         <Card 
                         key={d.id}
@@ -153,22 +168,16 @@ export default function Home() {
                         heightMin={d.heightMin}
                         heightMax={d.heightMax}
                          />
-                    )
-                })}
-            </div>
-            {/* <div className="paginado"></div> */}
+                    )})}
+                </div>
             <div >
             {<Paginado 
-            dogsPerPage={dogsPerPage}
-            allDogs={allDogs.length}
-            paginado = {paginado}
-            currentPage={currentPage}/>}
+                dogsPerPage={dogsPerPage}
+                allDogs={allDogs.length}
+                paginado = {paginado}
+                currentPage={currentPage}/>}
             </div>
-            <div>
-
-            </div>
-          
+        </div>: <Loading/>} 
         </div>
-        : <Loading/> } </div>
     )
 }

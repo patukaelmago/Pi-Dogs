@@ -1,12 +1,10 @@
 .card-container{
-    
     height: 370px;
     width: 300px;
     padding-right: 30px;
     padding-bottom: 30px;
     display:inline-block;
 }
-
 .card{
     border-radius: 1rem;
     box-shadow: 5px 8px 12px black;;
@@ -26,9 +24,6 @@
 .background-top-row{
     background-color: rgb(76, 209, 165);
     color: black;
-    
-    
-   
 }
 .image-container{ 
         border-radius: 8px 8px 0 0 ;
@@ -36,11 +31,8 @@
         width: 100%;
         object-fit: cover;
 }
-
 .temps {
-    color:rgb(0, 0, 0);
-    /* backdrop-filter: blur(1rem); */
-    /* background-color: #1ca381; */
+    color:black;
     padding-top: 15px;
     padding-bottom: 20px;
     

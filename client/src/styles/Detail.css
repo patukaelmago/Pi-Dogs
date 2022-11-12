@@ -6,7 +6,6 @@
     align-items: center;
     margin-bottom: 20px;
 }
-
 .detail-card{
     border-radius: 1rem;
     box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
@@ -23,7 +22,6 @@
     color: black;
     object-fit: cover;
 }
-
 .background-top-row{
     background-color: rgb(76, 209, 165);
     color: black;
@@ -31,33 +29,35 @@
 h2{
     backdrop-filter: blur(1rem);
 }
-
-
 .back{
     border-radius: 1rem;
-    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 5px 8px 12px black;
     cursor: pointer;
-    backdrop-filter: blur(1rem);
     overflow: hidden;
-    width: 50%;
-    height: 50%;
-    backdrop-filter: blur(1rem);
-    background-color: transparent;
-    border: .1rem solid rgb(76, 209, 165);
+    width: 220px;
+    height: 30px;
+    background-color:rgb(76, 209, 165) ;
+    border: .1rem solid black ;
     color: black;
     margin: .5rem;
+    letter-spacing: 2px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 18px;
 }
 .back:hover{
-    background-color: rgb(76, 209, 165);
-    color: black;
+    color: rgb(76, 209, 165);
+    background-color: rgb(77, 73, 73);
+    border: .1rem solid rgb(76, 209, 165);
+    
 }
-
+.back:active{
+    box-shadow: 0px 0px 1px black;
+    transform: translateY(5px);
+}
 .temp{
     cursor: pointer;
 }
 img{
     width: 100%;
-    
-    
-    
 }

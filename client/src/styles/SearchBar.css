@@ -1,4 +1,4 @@
-.group{
+/* .group{
     margin-left: 138px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -6,9 +6,8 @@
     height: 30px;
     width: 500px;
     display: flex;
-    
 }
-
+ */
 .input{
     height: 30px;
     width: 400px;
@@ -16,7 +15,7 @@
     color: rgb(0, 0, 0);
     letter-spacing: 2px;
     padding-left: 10px;
-    border: solid  rgb(76, 209, 165)1px;
+    border: solid  black 1px;
     border-radius: 50px;
     background-color:  rgb(76, 209, 165);
     box-shadow: 5px 8px 12px black;
@@ -26,30 +25,19 @@
     color: rgb(0, 0, 0);
     opacity: 1;
     font-size: 16px;
-    
 }
-
 .searcho{
     background-color: transparent;
-    border-top-color: black 1px;
-    color: rgb(76, 209, 165);
-    
+    color: black;
     height: 10px;
     width: 150px;
     cursor: pointer;
     font-size: 40px;
-    transform: translate(-20%, -60%);
-    
-    
+    transform: translate(-30%, -50%); 
 }
-
-
 .searcho:hover{
-    color: rgb(255, 255, 255);
-    
+    color: rgb(76, 209, 165);    
 }
-.pad{
-    padding-right: 80px;
-}
+
 
 
