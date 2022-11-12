@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import {  getTemperaments, postDog } from "../redux/actions";
+import {  getTemperaments, postDog, clearDogs} from "../redux/actions";
 import '../styles/Form.css';
 
 function validURL(strurl){
@@ -43,8 +43,9 @@ const validate = (input)=>{
 export default function Form(){
     const dispatch = useDispatch();
     const history = useHistory();
-    const temperaments = useSelector((state) => state.temperaments)
+    const temperaments = useSelector((state) => state.temperaments);
     const [errors, setErrors] = useState({});
+    /* const [clean,setClean] = useState(""); */
     const [input, setInput] = useState({
         name:'',
         weightMin:0,
@@ -54,7 +55,7 @@ export default function Form(){
         lifespan:'0',
         image:'',
         temperaments:[]
-    })
+    });
 
     useEffect(()=>{
         dispatch(getTemperaments());
@@ -82,6 +83,7 @@ export default function Form(){
     function handleSubmit(e){
         e.preventDefault()
         dispatch(postDog(input))
+        dispatch(clearDogs())
         alert('Dog Created succesfully')
         history.push('/home')
     }
@@ -204,7 +206,6 @@ export default function Form(){
                         <p className="error">{errors.lifespan}</p>
                     )}
                 </div>
-                
                 <div className="temps-div">
                     <select className="select-form" onChange={handleSelectTemperaments} >
                         {temperaments?.map((t)=>(<option value={t.name}>{t.name}</option>)
@@ -228,9 +229,9 @@ export default function Form(){
             </form>
           </div>
           <div className="back-container">
-            <Link to= '/home'><button className="button-back">Back </button></Link>
-            </div>
-    </div>
+                <Link to= '/home'><button className="button-back">Back </button></Link>
+          </div>
+        </div>
   )
 
 }
