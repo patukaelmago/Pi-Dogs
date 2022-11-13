@@ -97,6 +97,10 @@ export default function Form(){
     }
 
     return (
+        <>
+        <div className="back-container">
+            <Link to= '/home'><button className="back">Back </button></Link>
+        </div>
         <div className="form-container">
           <div className="created-card">
             <h1>Create Dog</h1>
@@ -220,15 +224,15 @@ export default function Form(){
                             </li>
                         ))}
                     </ul>
-                    <div className="submit-form">
+                    
+                </div>
+                <div className="submit-form">
                         {input.name.length < 2 || Object.keys(errors).length > 0 ? <button className="disable-button" disabled>Submit</button> : <button className="submit-button" type='submit'>Submit</button>}
                     </div>
-                </div>
             </form>
           </div>
-          <div className="back-container">
-                <Link to= '/home'><button className="back">Back </button></Link>
-          </div>
+          
         </div>
+    </>
   )
 }

@@ -1,6 +1,6 @@
 .input-form{
     height: 30px;
-    width: 80px;
+    width: 90px;
     backdrop-filter: blur(1rem);
     border: solid  rgb(76, 209, 165) 1px;
     border-radius: 50px;
@@ -9,7 +9,7 @@
     color:white;
     letter-spacing: 2px;
     margin: 5px;
-    padding-left: 10px;
+    padding: 10px;
 }
 .input-name{
     height: 30px;
@@ -18,89 +18,61 @@
     border: solid  rgb(76, 209, 165) 1px;
     border-radius: 50px;
     margin-right: 20px;
-    background-color: transparent;
+    background-color: rgb(76, 209, 165) ;
     color:white;
     letter-spacing: 2px;
     margin: 5px;
-    padding-left: 10px;
+    padding-left: 20px;
 }
+
 .form-container{
     display:flex;
-    min-height: 100vh;
+    
     justify-content: center;
     align-items: center;
     
 }
 .created-card{
-    height: 500px;
-    width: 500px;
+    height:550px;
+    width: 700px;
     backdrop-filter: blur(1rem);
     border: solid  rgb(76, 209, 165) 1px;
     border-radius: 50px;
     margin-right: 20px;
-    background-color:  transparent;
+    background-color:  rgb(77, 73, 73);
+    
   
 }
 .texto{
-    color: white;
+    color: black;
     font-size:20px;
+    padding-right: 15px;
+    
 }
 .error{
     color:red;
 }
 
 .temps-div{
-    border-radius: 1rem;
-    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
-    cursor: pointer;
-    height: 185px;
-    overflow: hidden;
-    backdrop-filter: blur(1rem);
     background-color: transparent;
-    color: black;
-    letter-spacing: 2px;
-    text-align: center;
 }
-.submit-form{
-    backdrop-filter: blur(1rem);
-    border-radius: 1rem;
-    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
-    cursor: pointer;
-    overflow: hidden;
-    width: 220px;
-    height: 30px;
-    backdrop-filter: blur(1rem);
-    background-color: transparent;
-    border: .1rem solid #1ca381 ;
-    color: black;
-    margin: 65px;
-    letter-spacing: 2px;
-    margin-left: 140px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding-top: 3px;
-}
-.submit-form:hover{
-    background-color: #1ca381;
-    color: black;
-}
+
 .lifeSpan{
     padding-right: 30px;
     
-    color: white;
+    color: black;
     font-size:20px;
 }
 .input-form-lifeSpan{
    
     height: 30px;
-    width: 80px;
+    width: 90px;
     backdrop-filter: blur(1rem);
-    border: solid  rgb(76, 209, 165) 1px;
+    border: solid black 1px;
     border-radius: 50px;
     margin-right: 200px;
-    background-color:transparent;
-    color:white;
+    background-color:rgb(76, 209, 165);
+    color:black;
     letter-spacing:2px;
     margin: 5px;
     padding-left: 10px;
@@ -108,20 +80,19 @@
 
 .select-form{
     border-radius: 1rem;
-    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 5px 8px 12px black;
     cursor: pointer;
-    backdrop-filter: blur(1rem);
     overflow: hidden;
     width: 220px;
     height: 30px;
-    backdrop-filter: blur(1rem);
-    background-color:rgb(76, 209, 165);
-    border: .1rem solid rgb(76, 209, 165);
+    background-color:rgb(76, 209, 165) ;
+    border: .1rem solid black ;
     color: black;
     margin: .5rem;
     letter-spacing: 2px;
     margin-left: 20px;
     text-align: center;
+    font-size: 18px;
 }
 .select-form:hover{
     background-color:  rgb(77, 73, 73);
@@ -144,13 +115,29 @@
     font-size: 18px;
 }
 .submit-button:hover{
-    color: white;
+    color: rgb(76, 209, 165);
+    background-color: rgb(77, 73, 73);
+    border: .1rem solid rgb(76, 209, 165);
+}
+.submit-button:active{
+    box-shadow: 0px 0px 1px black;
+    transform: translateY(5px);
+
 }
 .disable-button{
-    background-color: transparent;
-    font-size: 18px;
+    border-radius: 1rem;
+    box-shadow: 5px 8px 12px black;
+    cursor: pointer;
+    overflow: hidden;
+    width: 220px;
+    height: 30px;
+    background-color:transparent ;
+    border: .1rem solid rgb(76, 209, 165);
+    margin: .5rem;
+    letter-spacing: 2px;
+    margin-left: 20px;
     text-align: center;
-    justify-content: center;
+    font-size: 18px;
     
 }
 
@@ -164,29 +151,38 @@
     background-color:rgb(76, 209, 165) ;
     border: .1rem solid black ;
     color: black;
-    margin: .5rem;
+    
     letter-spacing: 2px;
     margin-left: 20px;
     text-align: center;
     font-size: 18px;
 }
-/* .button-back:hover{
+.button-back:hover{
     color: rgb(76, 209, 165);
     background-color: rgb(77, 73, 73);
     border: .1rem solid rgb(76, 209, 165);
-} */
-.back:active{
+}
+.button-back:active{
     box-shadow: 0px 0px 1px black;
     transform: translateY(5px);
     
 }
 .back-container{
-    margin-right: 100px;
-    margin-bottom: 450px;
+    padding-bottom: 30px;
+    margin-top: 30px;
 }
 .x-button{
     font-size: 20px;
     color: white;
     padding-left: 20px;
+}
+h1{
+    padding: 10px;
+}
+input.input-form{
+    background-color:rgb(76, 209, 165); 
+    border: .1rem solid black;
+    color: black;
+    
 }
 
