@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getDogs } from '../redux/actions';
 import '../styles/SearchBar.css';
@@ -19,7 +19,6 @@ function SearchBar({setCurrentPage}) {
      }
     return (
         <> 
-       
             <input
                 className='input'
                 type='search'
@@ -27,7 +26,6 @@ function SearchBar({setCurrentPage}) {
                 onChange={ handleInputChange }
                 value={name}
             /> <button className='searcho' type='search' onClick={handleSubmit}><FaSearch/></button>
-            
         </>
     )
 }

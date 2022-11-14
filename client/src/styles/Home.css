@@ -7,14 +7,12 @@
 }
 .home{
     background-color: rgb(132, 134, 136);
-    
-    
 }
 .cardsContainer{
     display: flex;
     justify-content: center;
     height: 100vh;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 ul{
@@ -30,30 +28,8 @@ ul{
     background-color: transparent;
     margin: .5rem;
 }
-.search-bar{
-    color: black;
-    height: 100;
-    align-items: center;
-    background-color:transparent;
-}
 /* .elementNB{
-    border-radius: 1rem;
-    box-shadow: 5px 8px 12px black;
-    cursor: pointer;
     backdrop-filter: blur(1rem);
-    overflow: hidden;
-    width: 200px;
-    height: 30px;
-    backdrop-filter: blur(1rem);
-    background-color: transparent;
-    border: .1rem solid rgb(76, 209, 165) ;
-    color: black;
-    margin: .5rem;
-    letter-spacing: 2px;
-    margin-left: 15px;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 17px;
 } */
 .elementNB:hover{
     background-color: rgb(76, 209, 165);
@@ -101,9 +77,9 @@ ul{
     background-color: rgb(77, 73, 73);
     border: .1rem solid rgb(76, 209, 165);
 }
-.container{
+/* .container{
     display: flex;
-}
+} */
 .padw{
     position: absolute;
     top: 20%;
@@ -129,29 +105,26 @@ ul{
     transform: translate(120%, 400%);
 }
 .padr{
-    padding-left: 100px;
+    
     position: absolute;
-    top: 30%;
-    right: 35%;
-    transform: translate(101%, 66%);
+    top: 60%;
+    right: 49%;
+    transform: translate(101%, 0%);
  }
  .padl{
-    padding-left: 100px;
     position: absolute;
     top: 30%;
     right: 35%;
-    transform: translate(101%, 203%);
+    transform: translate(143%, 203%);
  }
  .pad{
+    transform: translate(5%, -161%);
     position: absolute;
-    /* top: 15%;
-    right: 5%; */
-    transform: translate(13%, -280%);
+    width: 530px;
  }
 
 .header {
     margin-left: 135px;
-    /* margin-top: 200 auto; */
     width:1167px;
     height:310px;
     overflow: hidden;
@@ -164,7 +137,6 @@ ul{
     height: 100%;
     object-fit: cover;
     bottom: 100px;
-    
 }
 .header p{
     font-size: 6rem;
@@ -176,7 +148,6 @@ ul{
     text-shadow: 2px 0 black, -2px 0 black, 0 2px #fff, 0 -2px #fff,
     1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
-
 .header h3{
     font-size: 2rem;
     color: rgb(76, 209, 165);

@@ -54,7 +54,6 @@ export default function Home() {
         e.target.value = "Filter Temperaments"
         setCurrentPage(1);
         setOrden(e.target.value);
-        
     }
     function handleFilterCreated(e) {
         e.preventDefault();
@@ -101,7 +100,7 @@ export default function Home() {
                     <h3>Unconditional Love</h3>
                     <div className="padr">
                         <Link to='/dogs'>
-                            <button className='elementNA'> 
+                            <button className='elementNA' value="dog"> 
                                 Create Dog
                             </button>
                         </Link>
@@ -111,12 +110,12 @@ export default function Home() {
                            All Dogs
                         </button>
                     </div>
-                    <div className="container">
+                    
                         <div className="pad">
                             <SearchBar 
                             setCurrentPage={setCurrentPage} />
                         </div>
-                    </div>
+                    
                     <div className="padw">
                         <select  className='elementNC'defaultValue='selected' onChange={e => handleSortByName(e)} >
                             <option hidden value="Sort by name">{clean.name || "Sort by name"}</option>

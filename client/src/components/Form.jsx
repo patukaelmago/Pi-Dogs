@@ -34,11 +34,8 @@ const validate = (input)=>{
     if(input.lifespan < '1') errors.lifespan = 'The age must be a positive number '
     if(input.lifespan > '80')errors.lifespan = 'the value must be less than 80 years'
     if(!input.image || !validURL(input.image))errors.image = 'A valid image must be require'
-
     return errors
 }
-
-
 
 export default function Form(){
     const dispatch = useDispatch();
@@ -98,14 +95,14 @@ export default function Form(){
 
     return (
         <>
-        <div className="back-container">
+        <div className="back-container-b">
             <Link to= '/home'><button className="back">Back </button></Link>
         </div>
         <div className="form-container">
           <div className="created-card">
             <h1>Create Dog</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="name-div">
                     <label className="texto">Name</label>
                     <input className="input-name"
                     type= 'text'
@@ -115,10 +112,10 @@ export default function Form(){
                     onChange={handleChange}
                     />
                     {errors.name && (
-                        <p className="error">{errors.name}</p>
+                        <p className="error-name">{errors.name}</p>
                     )}
                 </div>
-                <div>
+                <div className="image-div">
                     <label className="texto">Image</label>
                     <input
                     className="input-name"
@@ -129,15 +126,14 @@ export default function Form(){
                     onChange={handleChange}
                     />
                      {errors.image && (
-                        <p className="error">{errors.image}</p>
+                        <p className="error-img">{errors.image}</p>
                     )}
-                </div>
-                <div>
+                </div >
+                <div className="label">
                     <label className="texto">Height Min </label>
                     <input
                     className="input-form"
                     type= 'number'
-                    placeholder="height min ..."
                     value= {input.heightMin}
                     name= 'heightMin'
                     min='1'
@@ -154,7 +150,6 @@ export default function Form(){
                     <input
                     className="input-form"
                     type= 'number'
-                    placeholder="height max..."
                     value= {input.heightMax}
                     name= 'heightMax'
                     min='1'
@@ -166,26 +161,24 @@ export default function Form(){
                         <p className="error">{errors.heightMax}</p>
                     )}
                 </div>
-                <div>
+                <div className="label">
                     <label className="texto">Weight Min </label>
                     <input
                     className="input-form"
                     type= 'number'
-                    placeholder="weight min..."
                     value= {input.weightMin}
                     name= 'weightMin'
                     onChange={handleChange}
                     />
                     {errors.weightMin && (
-                        <p className="error">{errors.weightMin}</p>
+                        <p className="error-wm">{errors.weightMin}</p>
                     )}
                 </div>
-                <div>
+                <div className="label">
                     <label className="texto">Weight Max </label>
                     <input
                     className="input-form"
                     type= 'number'
-                    placeholder="weight max..."
                     value= {input.weightMax}
                     name= 'weightMax'
                     onChange={handleChange}
@@ -194,18 +187,17 @@ export default function Form(){
                         <p className="error">{errors.weightMax}</p>
                     )}
                 </div>
-                <div>
+                <div className="label">
                     <label className="lifeSpan">Life Span </label>
                     <input
-                    className="input-form-lifeSpan"
+                    className="input-form"
                     type= 'number'
-                    placeholder="life span..."
                     value= {input.lifespan}
                     name= 'lifespan'
                     onChange={handleChange}
                     />
                     {errors.lifespan && (
-                        <p className="error">{errors.lifespan}</p>
+                        <p className="error-ls">{errors.lifespan}</p>
                     )}
                 </div>
                 <div className="temps-div">
@@ -216,7 +208,7 @@ export default function Form(){
                         {errors.temperaments && (
                             <p className="error">{errors.temperaments}</p>
                         )}
-                    <ul>
+                    <ul >
                         {input.temperaments.map(t=>(
                             <li className="x-button" key={t} >
                                 {t}
@@ -224,14 +216,12 @@ export default function Form(){
                             </li>
                         ))}
                     </ul>
-                    
                 </div>
                 <div className="submit-form">
-                        {input.name.length < 2 || Object.keys(errors).length > 0 ? <button className="disable-button" disabled>Submit</button> : <button className="submit-button" type='submit'>Submit</button>}
-                    </div>
+                    {input.name.length < 2 || Object.keys(errors).length > 0 ? <button className="disable-button" disabled>Submit</button> : <button className="submit-button" type='submit'>Submit</button>}
+                </div>
             </form>
           </div>
-          
         </div>
     </>
   )

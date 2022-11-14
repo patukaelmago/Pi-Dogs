@@ -1,16 +1,6 @@
-/* .group{
-    margin-left: 138px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    border-radius: 300px;
-    height: 30px;
-    width: 500px;
-    display: flex;
-}
- */
 .input{
     height: 30px;
-    width: 400px;
+    width: 430px;
     backdrop-filter: blur(1rem);
     color: rgb(0, 0, 0);
     letter-spacing: 2px;
@@ -30,10 +20,10 @@
     background-color: transparent;
     color: black;
     height: 10px;
-    width: 150px;
+    width: 140px;
     cursor: pointer;
     font-size: 40px;
-    transform: translate(-30%, -50%); 
+    transform: translate(170%, -450%); 
 }
 .searcho:hover{
     color: rgb(76, 209, 165);    
