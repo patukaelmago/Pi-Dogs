@@ -10,8 +10,9 @@
     border: .1rem solid rgb(76, 209, 165);
     color: rgb(0, 0, 0);
     margin: .5rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     box-shadow: 5px 8px 12px rgb(44, 43, 43);
+    transform: translate(0%, -40%);
 }
 .number:hover{
     background-color: rgb(76, 209, 165);
@@ -27,7 +28,9 @@
     cursor: pointer;
     box-shadow: 5px 8px 12px rgb(44, 43, 43);
     margin-bottom: 20px;
+    transform: translate(0%, -30%);
 }
+
 .flechas:hover{
 
     color: black;

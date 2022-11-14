@@ -1,35 +1,28 @@
-.landingContainer{
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fblog.coghillcartooning.com%2Fwp-content%2Fuploads%2F2011%2F12%2Fcartoon-doghouse-backyard-my-first-doggie.jpg&f=1&nofb=1');
 
-}
 /* background-image: url('./styles/dog.jpg'); */
 .landingButton {
     border-radius: 16px;
-    /* background-color: #ebe9e9; */
-    background-color: #1ca381;
-    
+    background-color: rgb(76, 209, 165) ;
     color: black;
     text-align: center;
     font-size: 28px;
     padding: 20px;
-    width: 350px;
+    width: 450px;
     transition: all 0.5s;
     cursor: pointer;
     top:10%;
-    left: 38%;
+    left: 34%;
     position:absolute;
     backdrop-filter: blur(1rem);
-    
+    /* transform: translate(-20%, -25%); */
+    box-shadow: 10px 10px 10px black;
   }
-  
-  
   .landingButton span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
-  
   .landingButton span:after {
     content: '\00bb';
     position: absolute;
@@ -38,12 +31,14 @@
     right: -20px;
     transition: 0.5s;
   }
-  
   .landingButton:hover span {
     padding-right: 25px;
   }
-  
   .landingButton:hover span:after {
     opacity: 1;
-    right: 0;
+    right: 1;
   }
+  .landingButton:active{
+    box-shadow: 0px 0px 10px black;
+    transform: translate(-5px,5px);
+}

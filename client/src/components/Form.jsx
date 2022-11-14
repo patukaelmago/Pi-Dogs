@@ -59,10 +59,14 @@ export default function Form(){
     },[dispatch]);
 
     function handleSelectTemperaments(e){
-        setInput({
-            ...input,
-            temperaments:input.temperaments.includes(e.target.value) ? input.temperaments : [...input.temperaments, e.target.value]
-        })
+        if(input.temperaments.length < 4){
+            setInput({
+                ...input,
+                temperaments:input.temperaments.includes(e.target.value) ? input.temperaments : [...input.temperaments, e.target.value]
+            })
+
+        }
+        
     }
 
     function handleChange(e){
